@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      name: config
+      label: master
+      profile: dev
+      uri: http://localhost:8888
+      discovery:
+        enabled: true
+        serviceId: config-server
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  profiles:
+    active: dev
+  rabbitmq:
+    host: 47.114.94.33
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8889/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
+server:
+  port: 8881

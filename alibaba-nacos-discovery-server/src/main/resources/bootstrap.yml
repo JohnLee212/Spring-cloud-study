@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: dev,datasource
+  #出现错误时, 直接抛出异常(便于异常统一处理，否则捕获不到404)
+  mvc:
+    throw-exception-if-no-handler-found: true
+  #不要为我们工程中的资源文件建立映射
+  resources:
+    add-mappings: false
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: alibaba-nacos-discovery-server
+  # nacos config
+  cloud:
+    nacos:
+      config:
+        server-addr: 47.105.136.13:8848
+#        namespace: 20c13ac8-21f2-49cf-99ee-74d2887c4c7c
+        # 配置文件后缀名为yaml
+        file-extension: yaml

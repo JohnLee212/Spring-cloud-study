@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: alibaba-nacos-discovery-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.105.136.13:8848
+        # 配置文件后缀名为yaml
+        file-extension: yaml
+server:
+  port: 8001
+
